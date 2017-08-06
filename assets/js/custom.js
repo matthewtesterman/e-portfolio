@@ -15,7 +15,7 @@ $(function() {
   //If scroll position is not in top position then set navigation bg color.
   changeNavColor();
   scrollToLink();
-
+   $('[data-toggle="tooltip"]').tooltip();   
   $('nav').toggle( "slide", {"direction": "up"});
 
   $('#ep-intro .text-box').toggle( "slide", {"direction": "right"}, function(){
