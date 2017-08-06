@@ -1,0 +1,517 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400');
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto');
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+nav {
+  display: none;
+}
+nav .logo {
+  font-family: 'Kaushan Script', cursive;
+  color: #FFF;
+}
+
+#ep-intro {
+  min-height: 100vh;
+  background-color: #000;
+  background: url('../img/img-intro.svg') fixed no-repeat top center ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+}
+#ep-intro .text-box {
+  margin-top: 10vh;
+  padding-bottom: 10px;
+  padding-top: 15px;
+  background-color: #22B573;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  display: none;
+  z-index: 105;
+}
+#ep-intro .text-box .text {
+opacity: 0.0;
+}
+#ep-intro .hot-air-balloon {
+  height: 367px;
+  width: 308px;
+  background: url('../img/img-hot-air-balloon.svg')  no-repeat top center ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: absolute;
+  top: 150vh;
+  left: 1px;
+}
+
+#ep-intro .clouds {
+  height: 254px;
+  width: 491px;
+  background: url('../img/img-clouds.svg')  no-repeat top center ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: absolute;
+  top: 50vh;
+  right: 25%;
+}
+
+#ep-intro h3 {
+  margin: 0px;
+}
+
+#ep-intro .text-box p {
+  font-size: 18px;
+  word-spacing: 3px;
+  letter-spacing: 1px;
+  line-height: 25px;
+}
+
+#ep-intro .text-box h2 {
+  margin-top: 5px;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+}
+#ep-intro p a:link {
+  color: yellow;
+}
+#ep-intro p a:visited {
+    color: yellow;
+}
+#ep-intro .ep-intro-divider-bottom {
+  width: 100%;
+  height: 69px;
+  background: url('../img/img-divider-red.svg') repeat-x bottom center;
+  position: absolute;
+  bottom:0;
+}
+#ep-quote-1 {
+  height: 100vh;
+  background-color: #F9414F;
+  background-size: contain;
+  position: relative;
+}
+#ep-quote-1 .text-box {
+  margin-top: 33vh;
+  color: white;
+  display: none;
+  z-index: 100;
+  position: absolute;
+  width: 100%;
+
+}
+
+
+#ep-quote-1 .divider-bottom {
+    background: url('../img/img-divider-white-red.svg') repeat-x bottom center;
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    bottom: 0;
+    z-index: 101
+}
+
+#ep-quote-1 .hot-air-balloon {
+  height: 100vh;
+  width: 500px;
+  background: url('../img/img-silo-balloon.svg')  no-repeat top left ;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  position: absolute;
+
+  left: 50%;
+  margin-left: -250px;
+  z-index: 99;
+
+}
+
+#ep-skills {
+  min-height: 100vh;
+    z-index: 101;
+    position: relative;
+}
+#ep-skills img {
+  /*display: none;*/
+}
+ #ep-skill-cols {
+  padding-top: 10vh;
+}
+
+#ep-skills #wrench {
+  height: 100vh;
+  width: 606px;
+  background: url('../img/img-wrench.svg')  no-repeat center left ;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 10vw;
+  top: 0;
+  z-index: -1;
+}
+#ep-skills #flashlight {
+  height: 100vh;
+  width: 606px;
+  background: url('../img/img-flashlight.svg')  no-repeat center left ;
+  -webkit-background-size: 75% 75%;
+  -moz-background-size: 75% 75%;
+  -o-background-size: 75% 75%;
+  background-size: 75% 75%;
+  position: absolute;
+  right: 5vw;
+  top: 0;
+  z-index: -1;
+}
+#ep-skills h1, #ep-skills h2, #ep-skills h3, #ep-skills h4{
+  color: #7A7A7A;
+  font-family: 'Roboto', sans-serif;
+  line-height: 35px;
+  letter-spacing: 2px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0px;
+  background-color: green;
+  width: 100%;
+}
+
+.skills-row {
+margin-bottom: 30px;
+}
+
+#ep-wh {
+  min-height: 100vh;
+  background: #F9414F url('../img/img-boat.png') fixed no-repeat top center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+
+}
+#ep-wh .ep-wh-divider{
+    background: url('../img/img-divider-white.svg') no-repeat top center;
+    height: 100px;
+    width: 100%;
+}
+
+
+  #ep-wh .text-box h2 {
+    margin-top: 5px;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+  }
+
+#ep-wh  .ep-wh-potrait {
+  position: absolute;
+  z-index: 100;
+  bottom: 0px;
+  left: 0px;
+  background: url('../img/img-portrait.svg') no-repeat top left;
+  height: 248px;
+  width: 248px;
+  display: none;
+}
+
+#ep-wh .ep-wh-text-boxes{
+  color: white;
+  background-color: rgba(129, 0, 128, 0.8);
+  font-family: 'Roboto', sans-serif;
+  padding:10px;
+  margin-top:10px;
+  margin-bottom: 80px;
+  display: none;
+
+}
+#ep-wh .ep-wh-text-boxes  p {
+  font-size: 18px;
+  word-spacing: 3px;
+  letter-spacing: 1px;
+  line-height: 25px;
+}
+#ep-wh .ep-wh-text-boxes  h2 {
+  margin-bottom: 20px;
+
+}
+
+#ep-wh p a:link {
+  color: yellow;
+}
+#ep-wh p a:active {
+  color: yellow;
+}
+#ep-wh p a:visited {
+  color: yellow;
+}
+#ep-wh  h2 {
+  margin-top: 0px;
+}
+#ep-wh .ep-wh-divider-bottom {
+  width: 100%;
+  height: 34px;
+  background: url('../img/img-divider-green.svg') repeat-x bottom center;
+
+  position: absolute;
+  bottom:0;
+  z-index: 101;
+}
+
+#ep-methodology {
+  padding-top: 10vh;
+  color:white;
+  min-height: 100vh;
+  background-color: #22B573;
+  position: relative;
+}
+#ep-methodology h1{
+  display: none;
+  z-index: 100;
+
+}
+
+#ep-methodology .column-1, #ep-methodology .column-2, #ep-methodology .column-3  {
+  display: none;
+  z-index: 100;
+}
+
+#ep-methodology .cog-1 {
+  color: #0A9958;
+  height: 100vh;
+  position: absolute;
+  top: 10vh;
+  left:10vh;
+  font-size:25vh;
+  z-index: 0;;
+}
+#ep-methodology .cog-2 {
+  color: #0A9958;
+  height: 100vh;
+  position: absolute;
+  top: 60vh;
+  left:50vh;
+  font-size:15vh;
+}
+#ep-methodology .cog-3 {
+  color: #0A9958;
+  height: 100vh;
+  position: absolute;
+  top: 5vh;
+  right:0vh;
+  font-size:15vh;
+}
+#ep-methodology .cog-1 .fa, #ep-methodology .cog-2 .fa, #ep-methodology .cog-3 .fa {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+main p, main h1, main h2, main h3, main h4{
+    font-family: 'Roboto', sans-serif;
+}
+
+#ep-methodology .ep-method-divider{
+    background: url('../img/img-divider-white-top.svg') repeat-x top center;
+    height: 100px;
+    width: 100%;
+}
+
+#ep-quote-2 {
+  min-height: 100vh;
+  background-color: #000;
+  background: url('../img/img-cave.png') fixed no-repeat top center ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+}
+
+#ep-quote-2 .divider {
+    background: url('../img/img-divider-green-bottom.svg') no-repeat top center;
+    height: 69px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    height: 100px;
+    width: 100%;
+    
+}
+
+#ep-quote-2 .divider-bottom {
+    width: 100%;
+    height: 34px;
+    background: url('../img/img-top-yellow.svg') repeat bottom center;
+    position: absolute;
+
+    bottom:0;
+}
+
+#ep-sw {
+  min-height: 100vh;
+  background-color: #FFDA00;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+#ep-quote-3 .divider {
+    background: url('../img/img-divider-green-bottom.svg') no-repeat top center;
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    height: 100px;
+    width: 100%;
+}
+
+#ep-quote-3 .divider-bottom {
+    width: 100%;
+    height: 69px;
+    background: url('../img/img-divider-blue.svg') no-repeat bottom center;
+    position: absolute;
+    bottom:0;
+}
+
+#ep-contact {
+  min-height: 100vh;
+  background-color: #0090DA;
+  position: relative;
+}
+#ep-contact .divider-top {
+  background: url('../img/img-divider-yellow-bottom.svg') no-repeat top center;
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  height: 100px;
+  width: 100%;
+}
+
+#ep-contact a:link {
+  color: white;
+}
+#ep-contact a:active {
+  color: white;
+}
+#ep-contact a:hover {
+  color: yellow;
+}
+#ep-contact a:visited {
+  color: white;
+}
+
+
+#ep-ty {
+  min-height: 100vh;
+  background-color: #000;
+  background: url('../img/img-space.png') fixed no-repeat bottom right ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+}
+#ep-ty #ep-ty-text {
+  background-color: rgba(0,117,214,0.5);
+  position: absolute;
+  right: 0;
+  top: 10vh;
+  color: white;
+  padding: 10px;
+}
+
+#ep-ty #ep-ty-astronaut {
+  height: 550px;
+  width: 396px;
+  background-color: white;
+  z-index:2000;
+
+  background: url('../img/img-astronaut.svg')  no-repeat top left ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+    position: absolute;
+    right: 10%;
+    top: 20vh;
+}
+#ep-ty #ep-ty-text p {
+  font-size: 16px;
+  font-family: 'Roboto';
+}
+#ep-ty .divider-top {
+  background: url('../img/img-divider-blue-bottom.svg') repeat-x top center;
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  height: 100px;
+  width: 100%;
+}
+
+/*Overide BS navigation */
+ .navbar-default .navbar-nav > li > a {
+    color: #FFFFFF;
+    font-family: 'Kaushan Script';
+}
+
+.navbar-default .navbar-nav > li > a:visited {
+  color: white;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: yellow;
+}
+.navbar-default .navbar-nav > li > a:focus {
+  color: white;
+}
+
+.navbar-default .navbar-nav > .active{
+   color: yellow;
+  background: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+     color: yellow;
+     background: transparent;
+}
+.btn {
+  border-radius: 0px;
+}
+
+/*MEDIA QUERIES*/
+
+/*max lg*/
+@media only screen and (max-width : 1200px) {
+
+}
+/*max md*/
+@media only screen and (max-width : 979px) {
+
+}
+/*max sm*/
+@media only screen and (max-width : 767px) {
+}
+/*max xs*/
+@media only screen and (max-width : 480px) {
+
+}
+/*max xxs*/
+@media only screen and (max-width : 320px) {
+}
