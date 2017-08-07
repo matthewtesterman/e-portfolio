@@ -21,16 +21,20 @@ $(function() {
     $('#ep-intro .text-box .text').animate({'opacity':'1.0'});
   });
 
-  $('#ep-quote-1 .text-box').toggle( "slide", {"direction": "left"} );
+  $('#ep-quote-1 .text-box').toggle( "slide", {"direction": "left", 'easing': 'easeInOutBack', 'duration': 1000} );
 
   $('.ep-wh-text-boxes').toggle('slide', {'easing': 'easeOutBack', 'duration': 500});
   $('#ep-wh  .ep-wh-potrait').toggle('slide', {'direction': 'down','easing': 'easeInCirc', 'duration': 1500});
-
+  animateSkillsSection();
   //METHOD EFFECTS:
   $('#ep-methodology h1').toggle('slide', {'direction': 'down','easing': 'easeInCirc', 'duration': 500});
   $('#ep-methodology .column-1').toggle('slide', {'direction': 'left','easing': 'easeInCirc', 'duration': 500});
   $('#ep-methodology .column-2').toggle('slide', {'direction': 'down','easing': 'easeInCirc', 'duration': 500});
   $('#ep-methodology .column-3').toggle('slide', {'direction': 'right','easing': 'easeInCirc', 'duration': 500});
+
+  //Quote-2 EFFECTS
+  $('#ep-quote-2 .text').toggle('slide', {'direction': 'right','easing': 'easeInOutBack', 'duration': 1000});
+  $('#ep-quote-2 .cyclops').toggle('slide', {'direction': 'down','easing': 'easeOutCubic', 'duration': 2000});
 
 
   //animateSkillsSection();
