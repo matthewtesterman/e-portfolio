@@ -35,6 +35,7 @@ nav .logo {
   font-family: 'Roboto', sans-serif;
   display: none;
   z-index: 105;
+  margin-bottom: 100px;
 }
 #ep-intro .text-box .text {
 opacity: 0.0;
@@ -347,7 +348,7 @@ main p, main h1, main h2, main h3, main h4{
     top: 0;
     height: 100px;
     width: 100%;
-    
+
 }
 
 #ep-quote-2 .divider-bottom {

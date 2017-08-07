@@ -9,13 +9,12 @@ var coloredBGNav = false; //determined if navbar has colored bg
 var viewWidth = $(window).width(); //get current window width size
 
 $(function() {
-
   //Iniital page load operations:
 
   //If scroll position is not in top position then set navigation bg color.
   changeNavColor();
   scrollToLink();
-   $('[data-toggle="tooltip"]').tooltip();   
+   $('[data-toggle="tooltip"]').tooltip();
   $('nav').toggle( "slide", {"direction": "up"});
 
   $('#ep-intro .text-box').toggle( "slide", {"direction": "right"}, function(){
