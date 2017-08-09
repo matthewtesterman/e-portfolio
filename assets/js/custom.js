@@ -96,7 +96,7 @@ function scrollToLink() {
 /*Toggle the navigation bar's background-color to green or none
 (depending on view width and scroll position)*/
 function changeNavColor() {
-  scrollPos = $(window).scrollTop(); 
+  scrollPos = $(window).scrollTop();
   var viewWidth = $(window).width();
 
   if ((scrollPos > 0 && !coloredBGNav) || viewWidth <  768)
@@ -248,14 +248,14 @@ function loop() {
 
             function getSectionScrollPos() {
               posIntro = 0;
-              posQuote1 = $('#ep-quote-1').offset().top - 50;
-              posSkills = $('#ep-skills').offset().top - 50;
-              posMethod = $('#ep-methodology').offset().top - 50;
-              posQuote2 = $('#ep-quote-2').offset().top - 50;
-              posWorkHist = $('#ep-wh').offset().top - 50;
-              posSampleWork = $('#ep-sw').offset().top - 50;
-              posContact = $('#ep-contact').offset().top - 50;
-              posGoodBye = $('#ep-ty').offset().top - 50;
+              posQuote1 = $('#ep-quote-1').offset().top - 250;
+              posSkills = $('#ep-skills').offset().top - 250;
+              posMethod = $('#ep-methodology').offset().top - 250;
+              posQuote2 = $('#ep-quote-2').offset().top - 250;
+              posWorkHist = $('#ep-wh').offset().top - 250;
+              posSampleWork = $('#ep-sw').offset().top - 250;
+              posContact = $('#ep-contact').offset().top - 250;
+              posGoodBye = $('#ep-ty').offset().top - 250;
 
             }
 
