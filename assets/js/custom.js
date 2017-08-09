@@ -96,7 +96,7 @@ function scrollToLink() {
 /*Toggle the navigation bar's background-color to green or none
 (depending on view width and scroll position)*/
 function changeNavColor() {
-  scrollPos = $(window).scrollTop();
+  scrollPos = $(window).scrollTop(); 
   var viewWidth = $(window).width();
 
   if ((scrollPos > 0 && !coloredBGNav) || viewWidth <  768)
