@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400');
 @import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto');
+
+/* Page Wide Styles */
 html, body {
-    max-width: 100%;
-    overflow-x: hidden;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 body {
   -webkit-font-smoothing: antialiased;
@@ -16,6 +18,15 @@ nav .logo {
   color: #FFF;
 }
 
+main p, main h1, main h2, main h3, main h4{
+  font-family: 'Roboto', sans-serif;
+}
+
+/*Nav*/
+.navbar .navbar-toggler .icon-bar {
+  color: black !important;
+}
+/*Intro Section*/
 #ep-intro {
   min-height: 100vh;
   background-color: #000;
@@ -26,6 +37,7 @@ nav .logo {
   background-size: cover;
   position: relative;
 }
+
 #ep-intro .text-box {
   margin-top: 10vh;
   padding-bottom: 10px;
@@ -39,7 +51,7 @@ nav .logo {
 }
 
 #ep-intro .text-box .text {
-opacity: 0.0;
+  opacity: 0.0;
 }
 
 #ep-intro .hot-air-balloon {
@@ -84,12 +96,15 @@ opacity: 0.0;
   letter-spacing: 4px;
   margin-bottom: 15px;
 }
+
 #ep-intro p a:link {
   color: yellow;
 }
+
 #ep-intro p a:visited {
-    color: yellow;
+  color: yellow;
 }
+
 #ep-intro .ep-intro-divider-bottom {
   width: 100%;
   height: 69px;
@@ -97,12 +112,15 @@ opacity: 0.0;
   position: absolute;
   bottom:0;
 }
+
+/*First Quote Section*/
 #ep-quote-1 {
   height: 100vh;
   background-color: #F9414F;
   background-size: contain;
   position: relative;
 }
+
 #ep-quote-1 .text-box {
   height: 200px;
   color: white;
@@ -110,14 +128,14 @@ opacity: 0.0;
   position: absolute;
   margin: auto;
   position: absolute;
-left: 0;  right: 0;
+  left: 0;  right: 0;
   z-index: 102;
   top: 33vh;
-
 }
 
-
-
+#ep-quote-1 .hot-air-balloon {
+  display: none;
+}
 
 #ep-quote-1 .hot-air-balloon {
   height: 75vh;
@@ -134,31 +152,34 @@ left: 0;  right: 0;
   z-index: 99;
 
 }
-
+/*Skills Section*/
 #ep-skills {
   min-height: 100vh;
-    z-index: 101;
-    position: relative;
+  z-index: 101;
+  position: relative;
 }
 
- #ep-skill-cols {
+#ep-skill-cols {
   padding-top: 10vh;
 }
+
 #ep-skills .title {
   display: none;
 }
+
 #ep-skills .divider-top {
-    background: url('../img/img-divider-red-top.svg') no-repeat top center;
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain;
-    width: 100%;
-    height: 40px;
-    position: absolute;
-    top: 0;
-    z-index: 105
+  background: url('../img/img-divider-red-top.svg') no-repeat top center;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  z-index: 105
 }
+
 #ep-skills #wrench {
   height: 100vh;
   width: 606px;
@@ -173,6 +194,7 @@ left: 0;  right: 0;
   z-index: -1;
   display: none;
 }
+
 #ep-skills #flashlight {
   height: 100vh;
   width: 606px;
@@ -187,29 +209,19 @@ left: 0;  right: 0;
   z-index: -1;
   display: none;
 }
-#ep-skills h1, #ep-skills h2, #ep-skills h3, #ep-skills h4{
+
+#ep-skills h1, #ep-skills h2, #ep-skills h3, #ep-skills h4 {
   color: #7A7A7A;
   font-family: 'Roboto', sans-serif;
   line-height: 35px;
   letter-spacing: 2px;
-
 }
 
 #ep-skills .skill-list-row, #ep-skills .skill-img-row {
   display: none;
 }
 
-.footer {
-  position: absolute;
-  bottom: 0px;
-  background-color: green;
-  width: 100%;
-}
-
-.skills-row {
-margin-bottom: 30px;
-}
-
+/*Work History Section*/
 #ep-wh {
   min-height: 100vh;
   background: #F9414F url('../img/img-boat.png') fixed no-repeat top center;
@@ -218,19 +230,19 @@ margin-bottom: 30px;
   -o-background-size: cover;
   background-size: cover;
   position: relative;
-
 }
+
 #ep-wh .ep-wh-divider{
-    background: url('../img/img-divider-white.svg') no-repeat top center;
-    height: 100px;
-    width: 100%;
+  background: url('../img/img-divider-white.svg') no-repeat top center;
+  height: 100px;
+  width: 100%;
 }
 
-  #ep-wh .text-box h2 {
-    margin-top: 5px;
-    letter-spacing: 4px;
-    margin-bottom: 15px;
-  }
+#ep-wh .text-box h2 {
+  margin-top: 5px;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+}
 
 #ep-wh  .ep-wh-potrait {
   position: absolute;
@@ -267,26 +279,29 @@ margin-bottom: 30px;
 #ep-wh p a:link {
   color: yellow;
 }
+
 #ep-wh p a:active {
   color: yellow;
 }
+
 #ep-wh p a:visited {
   color: yellow;
 }
+
 #ep-wh  h2 {
   margin-top: 0px;
 }
+
 #ep-wh .ep-wh-divider-bottom {
   width: 100%;
   height: 34px;
   background: url('../img/img-divider-green.svg') repeat-x bottom center;
-
   position: absolute;
   bottom:0;
   z-index: 101;
 }
 
-
+/*Method Section*/
 #ep-methodology {
   padding-top: 10vh;
   color:white;
@@ -297,7 +312,6 @@ margin-bottom: 30px;
 #ep-methodology h1{
   display: none;
   z-index: 100;
-
 }
 
 #ep-methodology .column-1, #ep-methodology .column-2, #ep-methodology .column-3  {
@@ -314,6 +328,7 @@ margin-bottom: 30px;
   font-size:25vh;
   z-index: 0;;
 }
+
 #ep-methodology .cog-2 {
   color: #0A9958;
   height: 100vh;
@@ -322,6 +337,7 @@ margin-bottom: 30px;
   left:50vh;
   font-size:15vh;
 }
+
 #ep-methodology .cog-3 {
   color: #0A9958;
   height: 100vh;
@@ -330,22 +346,20 @@ margin-bottom: 30px;
   right:0vh;
   font-size:15vh;
 }
+
 #ep-methodology .cog-1 .fa, #ep-methodology .cog-2 .fa, #ep-methodology .cog-3 .fa {
   display: block;
   padding: 0;
   margin: 0;
 }
 
-main p, main h1, main h2, main h3, main h4{
-    font-family: 'Roboto', sans-serif;
-}
-
 #ep-methodology .ep-method-divider{
-    background: url('../img/img-divider-white-top.svg') repeat-x top center;
-    height: 100px;
-    width: 100%;
+  background: url('../img/img-divider-white-top.svg') repeat-x top center;
+  height: 100px;
+  width: 100%;
 }
 
+/*Quote 2 Section*/
 #ep-quote-2 {
   min-height: 100vh;
   background-color: #000;
@@ -382,30 +396,29 @@ main p, main h1, main h2, main h3, main h4{
   bottom: 0;
   margin: auto;
   z-index: 0;
-
   width: 100%;
-
-
 }
+
 #ep-quote-2 .divider {
-    background: url('../img/img-divider-green-bottom.svg') no-repeat top center;
-    height: 69px;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    height: 100px;
-    width: 100%;
-
+  background: url('../img/img-divider-green-bottom.svg') no-repeat top center;
+  height: 69px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  height: 100px;
+  width: 100%;
 }
+
 
 #ep-quote-2 .divider-bottom {
-    width: 100%;
-    height: 34px;
-    background: url('../img/img-top-yellow.svg') repeat bottom center;
-    position: absolute;
-    bottom:0;
+  width: 100%;
+  height: 34px;
+  background: url('../img/img-top-yellow.svg') repeat bottom center;
+  position: absolute;
+  bottom:0;
 }
 
+/*Sample Works Section*/
 #ep-sw {
   min-height: 100vh;
   background-color: #FFDA00;
@@ -429,34 +442,16 @@ main p, main h1, main h2, main h3, main h4{
   position: relative;
   min-height: 400px;
   overflow: visible;
-  }
-
-
-
-#ep-quote-3 .divider {
-    background: url('../img/img-divider-green-bottom.svg') no-repeat top center;
-    height: 100px;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    height: 100px;
-    width: 100%;
 }
 
-#ep-quote-3 .divider-bottom {
-    width: 100%;
-    height: 69px;
-    background: url('../img/img-divider-blue.svg') no-repeat bottom center;
-    position: absolute;
-    bottom:0;
-}
-
+/*Contact Section*/
 #ep-contact {
   min-height: 100vh;
   background-color: #0090DA;
   position: relative;
   z-index: 101;
 }
+
 #ep-contact .divider-top {
   background: url('../img/img-divider-yellow-bottom.svg') no-repeat top center;
   height: 100px;
@@ -466,6 +461,7 @@ main p, main h1, main h2, main h3, main h4{
   height: 100px;
   width: 100%;
 }
+
 #ep-phone, #ep-media, #ep-resume, #ep-email{
   display: none;
 }
@@ -473,17 +469,20 @@ main p, main h1, main h2, main h3, main h4{
 #ep-contact a:link {
   color: white;
 }
+
 #ep-contact a:active {
   color: white;
 }
+
 #ep-contact a:hover {
   color: yellow;
 }
+
 #ep-contact a:visited {
   color: white;
 }
 
-
+/*Thank You (Good Bye) Section*/
 #ep-ty {
   min-height: 100vh;
   background-color: #000;
@@ -494,6 +493,7 @@ main p, main h1, main h2, main h3, main h4{
   background-size: cover;
   position: relative;
 }
+
 #ep-ty #ep-ty-text {
   background-color: rgba(0,117,214,0.5);
   display: none;
@@ -504,7 +504,6 @@ main p, main h1, main h2, main h3, main h4{
   font-family: 'Roboto', sans-serif;
   z-index: 102;
   margin-bottom: 100px;
-
 }
 
 #ep-ty  #ep-ty-text p {
@@ -519,13 +518,14 @@ main p, main h1, main h2, main h3, main h4{
   letter-spacing: 4px;
   margin-bottom: 15px;
 }
+
 #ep-ty  #ep-ty-text p a:link {
   color: yellow;
 }
-#ep-ty  #ep-ty-text p a:visited {
-    color: yellow;
-}
 
+#ep-ty  #ep-ty-text p a:visited {
+  color: yellow;
+}
 
 #ep-ty #ep-ty-astronaut {
   height: 45vh;
@@ -541,13 +541,10 @@ main p, main h1, main h2, main h3, main h4{
   overflow: auto;
   bottom: 0;
 }
-.test1 {
-  position: absolute;
-}
+
 #ep-ty #ep-ty-meteor {
   height: 231px;
   width: 251px;
-
   background: url('../img/img-meteor.svg')  no-repeat top left;
   -webkit-background-size: contain;
   -moz-background-size: contain;
@@ -559,6 +556,7 @@ main p, main h1, main h2, main h3, main h4{
   top: 10vh;
   overflow: hidden;
 }
+
 #ep-ty .divider-top {
   background: url('../img/img-divider-blue-bottom.svg') no-repeat top center;
   height: 100px;
@@ -567,15 +565,17 @@ main p, main h1, main h2, main h3, main h4{
   top: 0;
   height: 100px;
   width: 100%;
-    z-index: 104;
+  z-index: 104;
 }
 
+footer {
 
+}
 
 /*Overide BS navigation */
- .navbar-default .navbar-nav > li > a {
-    color: #FFFFFF;
-    font-family: 'Kaushan Script';
+.navbar-default .navbar-nav > li > a {
+  color: #FFFFFF;
+  font-family: 'Kaushan Script';
 }
 
 .navbar-default .navbar-nav > li > a:visited {
@@ -590,17 +590,26 @@ main p, main h1, main h2, main h3, main h4{
 }
 
 .navbar-default .navbar-nav > .active{
-   color: yellow;
+  color: yellow;
   background: transparent;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-     color: yellow;
-     background: transparent;
+  color: yellow;
+  background: transparent;
 }
 .btn {
   border-radius: 0px;
+}
+.navbar-default .navbar-toggle {
+  border-color: transparent; /* Removes border color */
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #f00; /* Changes regular toggle color */
+}
+.navbar-default .navbar-toggle .icon-bar:hover {
+  background-color: #fff; /* Changes toggle color on hover */
 }
 
 /*MEDIA QUERIES*/
@@ -615,6 +624,7 @@ main p, main h1, main h2, main h3, main h4{
 }
 /*max sm*/
 @media only screen and (max-width : 767px) {
+
 }
 /*max xs*/
 @media only screen and (max-width : 480px) {
@@ -622,4 +632,5 @@ main p, main h1, main h2, main h3, main h4{
 }
 /*max xxs*/
 @media only screen and (max-width : 320px) {
+
 }
