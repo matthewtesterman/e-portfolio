@@ -5,6 +5,8 @@
 html, body {
   max-width: 100%;
   overflow-x: hidden;
+  background-color: #006FBF;
+
 }
 body {
   -webkit-font-smoothing: antialiased;
@@ -157,6 +159,7 @@ main p, main h1, main h2, main h3, main h4{
   min-height: 100vh;
   z-index: 101;
   position: relative;
+  background-color: #FFFFFF;
 }
 
 #ep-skill-cols {
@@ -569,7 +572,9 @@ main p, main h1, main h2, main h3, main h4{
 }
 
 footer {
-
+  background-color: #006FBF;
+  color: white;
+  font-family: 'Roboto';
 }
 
 /*Overide BS navigation */
