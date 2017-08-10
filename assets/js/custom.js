@@ -14,12 +14,33 @@ var posIntro, posQuote1, posSkills, posMethod, posQuote2, posWorkHist, posSample
 var animateIntroIsOn = false, animateIntroIsOn = false, animateSkillsIsOn = false, animateQuote1IsOn = false, animateWorkHistoryIsOn = false, animateQuote2IsOn = false, animateSampleWorkIsOn = false; animateGoodByeIsOn = false; animateContactIsOn = false, animateMethodologyIsOn = false;
 var priorScrollPos, currentScrollPos, firstScroll = true, navHidden = false; //For navbar functionality
 
-//On ready
+//On ready Function
 $(function() {
   changeNavColor(); //Display the navigation bar according to scroll location
   getSectionScrollPos(); //Get scroll positions of every section and assign them to vars.
-  scrollEffectSection(); //Call effects for the specific section the user is in upon the page load.
   scrollToLink(); //Enables user to scroll to section upon clicking the nav link.
+
+  //If in mobile then do not animate any effects
+  if ($(window).width() < 768) {
+    //Remove fixed from images for mobile devices.
+    $('#ep-intro').css('background-attachment','scroll');
+    $('#ep-wh').css('background-attachment','scroll');
+    $('#ep-ty').css('background-attachment','scroll');
+    displayAllSections(); //display all hidden objects
+  }
+  else {
+    scrollEffectSection(); //Call effects for the specific section the user is in upon the page load.
+    //Call looping animation for various sections
+    loopAstronaut();
+    hotAirBalloonDrift();
+    moveClouds();
+    //On Scroll Event to handle navigation bar visibility and fire events up when scroll over.
+    $(window).scroll(function(){
+      scrollEffectSection();
+      changeNavColor();
+    });
+  }
+
 
   //Enable Bootstrap Tooltip feature used for github nav icon
   $('[data-toggle="tooltip"]').tooltip();
@@ -55,20 +76,11 @@ $(function() {
     }
   );
 });
-
-    //Call looping animation for various sections
-    loopAstronaut();
-    hotAirBalloonDrift();
-    moveClouds();
+}); //End of On Ready Function
 
 
-    //On Scroll Event to handle navigation bar visibility and fire events up when scroll over.
-    $(window).scroll(function(){
-      scrollEffectSection();
-      changeNavColor();
-    });
+/*FUNCTIONS*/ 
 
-});
 
 /*When user clicks link from navbar then scroll them to the
 desired section.*/
@@ -315,4 +327,41 @@ function loopAstronaut() {
               else {
 
               }
+            }
+            //Displays all the content in all sections.
+            function displayAllSections() {
+              $('#ep-intro .text-box').css('display','block');
+              $('#ep-intro .text-box .text').css('display','inline');
+              animateIntroIsOn = true;
+              $('#ep-quote-1 .text-box').css('display','block');
+              $('#ep-quote-1 .hot-air-balloon').css('display','block');
+              //hotAirBalloonDrift2();
+              animateQuote1IsOn = true;
+              $("#ep-skills #wrench").css('display','block');
+              $("#ep-skills #flashlight").css('display','block');
+              $('#ep-skills .title').css('display','block');
+              $('#ep-skills .skill-list-row').css('display','block');
+              $('#ep-skills .skill-img-row').css('display','block');
+              animateSkillsIsOn = true;
+              $('.ep-wh-text-boxes').css('display','block');
+              $('#ep-wh  .ep-wh-potrait').css('display','block');
+              animateWorkHistoryIsOn = true;
+              $('#ep-methodology h1').css('display','block');
+              $('#ep-methodology .column-1').css('display','block');
+              $('#ep-methodology .column-2').css('display','block');
+              $('#ep-methodology .column-3').css('display','block');
+              animateMethodologyIsOn = true;
+              $('#ep-quote-2 .text').css('display','block');
+              $('#ep-quote-2 .cyclops').css('display','block');
+              animateQuote2IsOn = true;
+              $('#ep-top-row').css('display','block');
+              $('#ep-bottom-row').css('display','block');
+              animateSampleWorkIsOn = true;
+              $('#ep-phone').css('display','block');
+              $('#ep-resume').css('display','block');
+              $('#ep-media').css('display','block');
+              $('#ep-email').css('display','block');
+              animateContactIsOn = true;
+              $('#ep-ty #ep-ty-text').css('display','block');
+              $('#ep-ty-meteor').css('display','block');
             }

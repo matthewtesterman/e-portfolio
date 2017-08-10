@@ -15,7 +15,6 @@ nav {
   display: none;
 }
 nav .logo {
-  font-family: 'Kaushan Script', cursive;
   color: #FFF;
 }
 
@@ -365,12 +364,9 @@ main p, main h1, main h2, main h3, main h4{
 #ep-quote-2 {
   min-height: 100vh;
   background-color: #000;
-  background: url('../img/img-cave.png') fixed no-repeat top center ;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: url('../img/img-cave.png')  no-repeat center center;
   position: relative;
+  padding-bottom: 100px;
 }
 
 #ep-quote-2 .text {
@@ -384,6 +380,7 @@ main p, main h1, main h2, main h3, main h4{
   left: 0;
   right: 0;
   margin: 0 auto;
+
 }
 
 #ep-quote-2 .cyclops {
@@ -617,14 +614,36 @@ footer {
   background-color: #fff; /* Changes toggle color on hover */
 }
 .navbar {
-  background: url('../img/img-logo.svg') no-repeat left top;
-  -webkit-background-size: contain;
-  -moz-background-size: contain;
-  -o-background-size: contain;
-  background-size: contain;
+
 
 }
 
+
+@media screen and (min-width: 1200px) {
+  #ep-quote-2 .text {
+    font-size: 30px;
+  }
+}
+@media screen and (min-width: 979px) and (max-width : 1200px)  {
+  #ep-quote-2 .text {
+    font-size: 25px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width : 979px) {
+  #ep-quote-2 .text {
+    font-size: 22px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width : 480px) {
+  #ep-quote-2 .text {
+    font-size: 22px;
+  }
+}
+@media screen and (min-width: 0px) and (max-width : 320px) {
+  #ep-quote-2 .text {
+    font-size: 20px;
+  }
+}
 /*MEDIA QUERIES*/
 
 /*max lg*/
@@ -638,7 +657,6 @@ footer {
 /*max sm*/
 @media only screen and (max-width : 767px) {
 
-}
 /*max xs*/
 @media only screen and (max-width : 480px) {
 
