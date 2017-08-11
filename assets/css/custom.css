@@ -5,24 +5,21 @@ html, body {
   max-width: 100%;
   overflow-x: hidden;
   background-color: #006FBF;
-
+  font-family: 'Roboto', sans-serif;
 }
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/*Nav*/
 nav {
   display: none;
 }
 nav .logo {
   color: #FFF;
-}
 
-main p, main h1, main h2, main h3, main h4{
-  font-family: 'Roboto', sans-serif;
 }
-
-/*Nav*/
 .navbar .navbar-toggler .icon-bar {
   color: black !important;
 }
@@ -44,7 +41,6 @@ main p, main h1, main h2, main h3, main h4{
   padding-top: 15px;
   background-color: #22B573;
   color: white;
-  font-family: 'Roboto', sans-serif;
   display: none;
   z-index: 105;
   margin-bottom: 100px;
@@ -213,7 +209,6 @@ main p, main h1, main h2, main h3, main h4{
 
 #ep-skills h1, #ep-skills h2, #ep-skills h3, #ep-skills h4 {
   color: #7A7A7A;
-  font-family: 'Roboto', sans-serif;
   line-height: 35px;
   letter-spacing: 2px;
 }
@@ -225,7 +220,7 @@ main p, main h1, main h2, main h3, main h4{
 /*Work History Section*/
 #ep-wh {
   min-height: 100vh;
-  background: #F9414F url('../img/img-boat.png') fixed no-repeat top center;
+  background: #F9414F url('../img/img-boat.png') fixed no-repeat top left;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -259,7 +254,6 @@ main p, main h1, main h2, main h3, main h4{
 #ep-wh .ep-wh-text-boxes{
   color: white;
   background-color: rgba(129, 0, 128, 0.8);
-  font-family: 'Roboto', sans-serif;
   padding:10px;
   margin-top:10px;
   margin-bottom: 80px;
@@ -422,7 +416,6 @@ main p, main h1, main h2, main h3, main h4{
   min-height: 100vh;
   background-color: #FFDA00;
   position: relative;
-  font-family: 'Roboto', sans-serif;
 }
 
 #ep-sw #ep-top-row, #ep-sw #ep-bottom-row {
@@ -500,7 +493,6 @@ main p, main h1, main h2, main h3, main h4{
   padding-bottom: 10px;
   padding-top: 15px;
   color: white;
-  font-family: 'Roboto', sans-serif;
   z-index: 102;
   margin-bottom: 100px;
 }
@@ -570,13 +562,11 @@ main p, main h1, main h2, main h3, main h4{
 footer {
   background-color: #006FBF;
   color: white;
-  font-family: 'Roboto';
 }
 
 /*Overide BS navigation */
 .navbar-default .navbar-nav > li > a {
   color: #FFFFFF;
-  font-family: 'Roboto';
   letter-spacing: 1px;
 }
 
