@@ -25,6 +25,7 @@ $(function() {
     //Remove fixed from images for mobile devices.
     $('#ep-intro').css('background-attachment','scroll');
     $('#ep-wh').css('background-attachment','scroll');
+    $('#ep-quote-2').css('background-attachment','scroll');
     $('#ep-ty').css('background-attachment','scroll');
     displayAllSections(); //display all hidden objects
   }
@@ -40,7 +41,6 @@ $(function() {
       changeNavColor();
     });
   }
-
 
   //Enable Bootstrap Tooltip feature used for github nav icon
   $('[data-toggle="tooltip"]').tooltip();
@@ -78,8 +78,7 @@ $(function() {
 });
 }); //End of On Ready Function
 
-
-/*FUNCTIONS*/ 
+/*FUNCTIONS*/
 
 
 /*When user clicks link from navbar then scroll them to the

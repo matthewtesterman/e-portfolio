@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400|Reem+Kufi');
 
 /* Page Wide Styles */
 html, body {
@@ -17,6 +17,8 @@ nav {
   display: none;
 }
 nav .logo {
+  font-size: 17px;
+  font-family: "Reem Kufi", sans-serif;
   color: #FFF;
 
 }
@@ -358,7 +360,7 @@ nav .logo {
 #ep-quote-2 {
   min-height: 100vh;
   background-color: #000;
-  background: url('../img/img-cave.png')  no-repeat center center;
+  background: url('../img/img-cave.png')  fixed no-repeat center center;
   position: relative;
   padding-bottom: 100px;
 }
