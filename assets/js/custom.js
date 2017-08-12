@@ -5,20 +5,20 @@
 ************************************/
 
 //Global Variables
-var scrollPos = $(window).scrollTop(); // get current position of user scroll
-var coloredBGNav = false; //determined if navbar has colored bg
-var viewWidth = $(window).width(); //get current window width size
-var cardPos = 1; //Keep Track of Card Position in the #ep-wh section.
-var currentSection = ""; //Track position in which section (ex: intro, skills, etc.)
-var posIntro, posQuote1, posSkills, posMethod, posQuote2, posWorkHist, posSampleWork, posContact, posGoodBye; //Scroll Postions of Sections
-var animateIntroIsOn = false, animateIntroIsOn = false, animateSkillsIsOn = false, animateQuote1IsOn = false, animateWorkHistoryIsOn = false, animateQuote2IsOn = false, animateSampleWorkIsOn = false; animateGoodByeIsOn = false; animateContactIsOn = false, animateMethodologyIsOn = false;
-var priorScrollPos, currentScrollPos, firstScroll = true, navHidden = false; //For navbar functionality
+var mattsEP = {}; //Create Object (for namespace purposes)
+
+mattsEP.scrollPos = $(window).scrollTop(); // get current position of user scroll
+mattsEP.coloredBGNav = false; //determined if navbar has colored bg
+mattsEP.viewWidth = $(window).width(); //get current window width size
+mattsEP.cardPos = 1; //Keep Track of Card Position in the #ep-wh section.
+mattsEP.currentSection = ""; //Track position in which section (ex: intro, skills, etc.)
+mattsEP.animatitonOn = {intro: false, quote1 : false, skills : false, workHistory : false, method: false, quote2 : false, sampleWork : false, contact: false, goodBye : false};
 
 //On ready Function
 $(function() {
-  changeNavColor(); //Display the navigation bar according to scroll location
-  getSectionScrollPos(); //Get scroll positions of every section and assign them to vars.
-  scrollToLink(); //Enables user to scroll to section upon clicking the nav link.
+  mattsEP.changeNavColor(); //Display the navigation bar according to scroll location
+  mattsEP.getSectionScrollPos(); //Get scroll positions of every section and assign them to vars.
+  mattsEP.scrollToLink(); //Enables user to scroll to section upon clicking the nav link.
 
   //If in mobile then do not animate any effects
   if ($(window).width() < 768) {
@@ -27,18 +27,18 @@ $(function() {
     $('#ep-wh').css('background-attachment','scroll');
     $('#ep-quote-2').css('background-attachment','scroll');
     $('#ep-ty').css('background-attachment','scroll');
-    displayAllSections(); //display all hidden objects
+    mattsEP.displayAllSections(); //display all hidden objects
   }
   else {
-    scrollEffectSection(); //Call effects for the specific section the user is in upon the page load.
+    mattsEP.scrollEffectSection(); //Call effects for the specific section the user is in upon the page load.
     //Call looping animation for various sections
-    loopAstronaut();
-    hotAirBalloonDrift();
-    moveClouds();
+    mattsEP.loopAstronaut();
+    mattsEP.hotAirBalloonDrift();
+    mattsEP.moveClouds();
     //On Scroll Event to handle navigation bar visibility and fire events up when scroll over.
     $(window).scroll(function(){
-      scrollEffectSection();
-      changeNavColor();
+      mattsEP.scrollEffectSection();
+      mattsEP.changeNavColor();
     });
   }
 
@@ -52,23 +52,23 @@ $(function() {
   $('.btn-read-more').click(function(e){
     e.preventDefault();
     $('.ep-wh-text-boxes').toggle('slide', {'direction':'left','easing': 'easeOutBack', 'duration': 500}, function() {
-      if (cardPos === 1) {
-        cardPos++;
+      if (mattsEP.cardPos === 1) {
+        mattsEP.cardPos++;
         $('#text-1').css('display','none');
         $('#text-2').fadeIn();
       }
-      else if(cardPos === 2) {
-        cardPos++;
+      else if(mattsEP.cardPos === 2) {
+        mattsEP.cardPos++;
         $('#text-2').css('display','none');
         $('#text-3').fadeIn();
       }
-      else if (cardPos === 3) {
-        cardPos = 1;
+      else if (mattsEP.cardPos === 3) {
+        mattsEP.cardPos = 1;
         $('#text-3').css('display','none');
         $('#text-1').fadeIn();
       }
       else {
-        cardPos = 1;
+        mattsEP.cardPos = 1;
         $('#text-3').css('display','none');
         $('#text-1').fadeIn();
       }
@@ -83,7 +83,7 @@ $(function() {
 
 /*When user clicks link from navbar then scroll them to the
 desired section.*/
-function scrollToLink() {
+mattsEP.scrollToLink = function() {
   $('a[href^="#"]').on('click', function(event) {
     var target = $(this.getAttribute('href'));
     if( target.length ) {
@@ -97,34 +97,34 @@ function scrollToLink() {
 
 /*Toggle the navigation bar's background-color to green or none
 (depending on view width and scroll position)*/
-function changeNavColor() {
-  scrollPos = $(window).scrollTop();
-  var viewWidth = $(window).width();
+mattsEP.changeNavColor = function() {
+  mattsEP.scrollPos = $(window).scrollTop();
+  mattsEP.viewWidth = $(window).width();
 
-  if ((scrollPos > 0 && !coloredBGNav) || viewWidth <  768)
+  if ((mattsEP.scrollPos > 0 && !mattsEP.coloredBGNav) || mattsEP.viewWidth <  768)
   {
     $('.navbar ').animate({'background-color':'#1F90E5'});
-    coloredBGNav = true;
+    mattsEP.coloredBGNav = true;
   }
-  else if (scrollPos <= 0 && coloredBGNav) {
+  else if (mattsEP.scrollPos <= 0 && mattsEP.coloredBGNav) {
     $('.navbar ').animate({'background-color':'transparent'});
-    coloredBGNav = false;
+    mattsEP.coloredBGNav = false;
   }
 }
 
 // Loops the astronaut animation for the last Section
-function loopAstronaut() {
+mattsEP.loopAstronaut = function() {
   $('#ep-ty #ep-ty-astronaut').animate({'bottom': '+=5vh'}, {
     duration: 1000,
     complete: function() {
       $('#ep-ty #ep-ty-astronaut').animate({'bottom': '-=5vh'}, {
         duration: 1000,
-        complete: loopAstronaut});
+        complete: mattsEP.loopAstronaut});
       }});
     }
 
     //Loops the hot air balloon for the quote section
-    function hotAirBalloonDrift() {
+    mattsEP.hotAirBalloonDrift = function() {
       $('#ep-intro .hot-air-balloon ').animate({'top': '18vh'}, {
         duration: 1500,
         easing: 'linear',
@@ -132,7 +132,7 @@ function loopAstronaut() {
           $('#ep-intro .hot-air-balloon ').animate({'top': '20vh'}, {
             duration: 1500,
             easing: 'linear',
-            complete: hotAirBalloonDrift});
+            complete: mattsEP.hotAirBalloonDrift});
           }});
         }
         var balloonStep = 0;
@@ -140,7 +140,7 @@ function loopAstronaut() {
         var left2 = '+=2vw';
 
         //Hot Air balloon effects from first quote
-        function hotAirBalloonDrift2() {
+        mattsEP.hotAirBalloonDrift2 = function() {
           //If steps greater than 10 then reverse directions; if greater than 20 then reset
           if (balloonStep >= 10 && balloonStep < 20){
             left1 = '-=1vw';
@@ -161,13 +161,13 @@ function loopAstronaut() {
               $('#ep-quote-1 .hot-air-balloon').animate({'top': '+=2vh', 'left': left2}, {
                 duration: 1000 ,
                 easing: 'linear',
-                complete: hotAirBalloonDrift2});
+                complete: mattsEP.hotAirBalloonDrift2});
               }});
               balloonStep++;
             }
 
             //Loops the clouds for the intro section
-            function moveClouds() {
+            mattsEP.moveClouds = function() {
               $('#ep-intro .clouds').css('display','none');
               var randTopPos = (Math.floor((Math.random() * 40) +20)) + "vh";
               $('.clouds').css('top',randTopPos);
@@ -178,26 +178,26 @@ function loopAstronaut() {
                   $('#ep-intro .clouds').animate({'right': '-150%'}, {
                     duration: 8000,
                     easing: 'linear',
-                    complete: moveClouds}
+                    complete: mattsEP.moveClouds}
                   );
                 }
               });
             }
 
             //Animates Intro Section
-            function animateIntro() {
+            mattsEP.animateIntro = function () {
               $('#ep-intro .text-box').toggle( "slide", {"direction": "right"}, function(){
                 $('#ep-intro .text-box .text').animate({'opacity':'1.0'});
               });
-              animateIntroIsOn = true;
+              mattsEP.animatitonOn['intro'] = true;
             }
 
             //Animates the first quote Section
             function animateQuote1() {
               $('#ep-quote-1 .text-box').toggle( "slide", {"direction": "left", 'easing': 'easeInOutBack', 'duration': 1000});
               $('#ep-quote-1 .hot-air-balloon').toggle({"direction": "down"});
-              hotAirBalloonDrift2();
-              animateQuote1IsOn = true;
+              mattsEP.hotAirBalloonDrift2();
+              mattsEP.animatitonOn['quote1'] = true;
             }
 
             //Animates the Skills Section
@@ -208,14 +208,14 @@ function loopAstronaut() {
                 $('#ep-skills .skill-list-row').toggle('slide', {'direction':'left','easing': 'easeInOutBack', 'duration': 1000});
                 $('#ep-skills .skill-img-row').toggle('slide', {'direction':'right','easing': 'easeInOutBack', 'duration': 1000});
               });
-              animateSkillsIsOn = true;
+              mattsEP.animatitonOn['skills'] = true;
             }
 
             //Animates the Work History Section
             function animateWorkHistory() {
               $('.ep-wh-text-boxes').toggle('slide', {'easing': 'easeOutBack', 'duration': 500});
               $('#ep-wh  .ep-wh-potrait').toggle('slide', {'direction': 'down','easing': 'easeInCirc', 'duration': 1500});
-              animateWorkHistoryIsOn = true;
+              mattsEP.animatitonOn['workHistory'] = true;
             }
 
             //Animates the Methodology Section
@@ -224,21 +224,21 @@ function loopAstronaut() {
               $('#ep-methodology .column-1').toggle('slide', {'direction': 'left','easing': 'easeInCirc', 'duration': 500});
               $('#ep-methodology .column-2').toggle('slide', {'direction': 'down','easing': 'easeInCirc', 'duration': 500});
               $('#ep-methodology .column-3').toggle('slide', {'direction': 'right','easing': 'easeInCirc', 'duration': 500});
-              animateMethodologyIsOn = true;
+              mattsEP.animatitonOn['method']  = true;
             }
 
             //Animates the Quote 2 Section
             function animateQuote2() {
               $('#ep-quote-2 .text').toggle('slide', {'direction': 'right','easing': 'easeInOutBack', 'duration': 1000});
               $('#ep-quote-2 .cyclops').toggle('slide', {'direction': 'down','easing': 'easeOutCubic', 'duration': 2000});
-              animateQuote2IsOn = true;
+              mattsEP.animatitonOn['quote2'] = true;
             }
 
             //Animates the Sample Work Section
             function animateSampleWork() {
               $('#ep-top-row').toggle('slide',{'direction':'up','duration':'1000'})
               $('#ep-bottom-row').toggle('slide',{'direction':'down','duration':'1000'})
-              animateSampleWorkIsOn = true;
+              mattsEP.animatitonOn['sampleWork'] = true;
             }
 
             //Animates the work Contact Section
@@ -250,7 +250,7 @@ function loopAstronaut() {
                   });
                 });
               })
-              animateContactIsOn = true;
+              mattsEP.animatitonOn['contact'] = true;
             }
 
             //Animates the last Section
@@ -259,65 +259,67 @@ function loopAstronaut() {
               $('#ep-ty #ep-ty-text').toggle('slide', {'direction':'up', 'direction' : 'left'}, function() {
                 $('#ep-ty-meteor').animate({'left':'-251px','top':'+=10vh'}, 2000);
               });
-              animateGoodByeIsOn = true;
+              mattsEP.animatitonOn['goodBye'] = true;
             }
 
             //Gets the scroll postion of every section.
-            function getSectionScrollPos() {
-              posIntro = 0;
-              posQuote1 = $('#ep-quote-1').offset().top - 250;
-              posSkills = $('#ep-skills').offset().top - 250;
-              posMethod = $('#ep-methodology').offset().top - 250;
-              posQuote2 = $('#ep-quote-2').offset().top - 250;
-              posWorkHist = $('#ep-wh').offset().top - 250;
-              posSampleWork = $('#ep-sw').offset().top - 250;
-              posContact = $('#ep-contact').offset().top - 250;
-              posGoodBye = $('#ep-ty').offset().top - 250;
+            mattsEP.getSectionScrollPos = function(){
+              mattsEP.posIntro = 0;
+              mattsEP.posQuote1 = $('#ep-quote-1').offset().top - 250;
+              mattsEP.posSkills = $('#ep-skills').offset().top - 250;
+              mattsEP.posMethod = $('#ep-methodology').offset().top - 250;
+              mattsEP.posQuote2 = $('#ep-quote-2').offset().top - 250;
+              mattsEP.posWorkHist = $('#ep-wh').offset().top - 250;
+              mattsEP.posSampleWork = $('#ep-sw').offset().top - 250;
+              mattsEP.posContact = $('#ep-contact').offset().top - 250;
+              mattsEP.posGoodBye = $('#ep-ty').offset().top - 250;
 
             }
 
             //determines where the user is on the page and animates effects for the slide if it is the user's first occurance.
-            function scrollEffectSection() {
-              getSectionScrollPos();
+            mattsEP.scrollEffectSection = function() {
 
-              var currentPos = $(this).scrollTop();
-              if (currentPos >= posIntro && currentPos < posQuote1 && currentSection !== "intro") {
-                animateIntroIsOn == false ? animateIntro() : null;
-                currentSection = "intro";
+              this.getSectionScrollPos();
+              var currentPos = $(window).scrollTop();
+
+              if (currentPos >= mattsEP.posIntro && currentPos < mattsEP.posQuote1 && mattsEP.currentSection !== "intro") {
+                console.log("mattsEP.posQuote1");
+                mattsEP.animatitonOn['intro'] == false ? mattsEP.animateIntro() : null;
+                mattsEP.currentSection = "intro";
               }
-              else if (currentPos >= posQuote1 && currentPos < posSkills && currentSection !== "quote1") {
-                animateQuote1IsOn == false ? animateQuote1() : null;
-                currentSection = "quote1";
+              else if (currentPos >= mattsEP.posQuote1 && currentPos < mattsEP.posSkills && mattsEP.currentSection !== "quote1") {
+                mattsEP.animatitonOn['quote1'] == false ? animateQuote1() : null;
+                mattsEP.currentSection = "quote1";
                 $('.navbar ').animate({'background-color':'#1F90E5'});
               }
-              else if (currentPos >= posSkills && currentPos < posWorkHist && currentSection !== "skills") {
-                animateSkillsIsOn == false ? animateSkillsSection() : null;
-                currentSection = "skills";
+              else if (currentPos >= mattsEP.posSkills && currentPos < mattsEP.posWorkHist && mattsEP.currentSection !== "skills") {
+                mattsEP.animatitonOn['skills']  == false ? animateSkillsSection() : null;
+                mattsEP.currentSection = "skills";
               }
-              else if (currentPos >= posWorkHist && currentPos < posMethod && currentSection !== "workHistory") {
-                animateWorkHistoryIsOn == false ? animateWorkHistory() : null;
-                currentSection = "workHistory";
+              else if (currentPos >= mattsEP.posWorkHist && currentPos < mattsEP.posMethod && mattsEP.currentSection !== "workHistory") {
+                mattsEP.animatitonOn['workHistory'] == false ? animateWorkHistory() : null;
+                mattsEP.currentSection = "workHistory";
               }
-              else if (currentPos >= posMethod && currentPos < posQuote2 && currentSection !== "methodology") {
-                animateMethodologyIsOn == false ? animateMethodology() : null;
-                currentSection = "methodology";
+              else if (currentPos >= mattsEP.posMethod && currentPos < mattsEP.posQuote2 && mattsEP.currentSection !== "methodology") {
+                mattsEP.animatitonOn['method']  == false ? animateMethodology() : null;
+                mattsEP.currentSection = "methodology";
               }
-              else if (currentPos >= posQuote2 && currentPos < posSampleWork && currentSection !== "quote2") {
-                animateQuote2IsOn == false ? animateQuote2() : null;
-                currentSection = "quote2";
+              else if (currentPos >= mattsEP.posQuote2 && currentPos < mattsEP.posSampleWork && mattsEP.currentSection !== "quote2") {
+                mattsEP.animatitonOn['quote2'] == false ? animateQuote2() : null;
+                mattsEP.currentSection = "quote2";
               }
-              else if (currentPos >= posSampleWork && currentPos < posContact && currentSection !== "sampleWork") {
-                animateSampleWorkIsOn == false ? animateSampleWork() : null;
-                currentSection = "sampleWork";
+              else if (currentPos >= mattsEP.posSampleWork && currentPos < mattsEP.posContact && mattsEP.currentSection !== "sampleWork") {
+                mattsEP.animatitonOn['sampleWork'] == false ? animateSampleWork() : null;
+                mattsEP.currentSection = "sampleWork";
               }
-              else if (currentPos >= posContact && currentPos < posGoodBye && currentSection !== "contact") {
-                animateContactIsOn == false ? animateContact() : null;
-                currentSection = "contact";
+              else if (currentPos >= mattsEP.posContact && currentPos < mattsEP.posGoodBye && mattsEP.currentSection !== "contact") {
+                mattsEP.animatitonOn['contact']  == false ? animateContact() : null;
+                mattsEP.currentSection = "contact";
                 $('.navbar ').animate({'background-color':'#1F90E5'});
               }
-              else if (currentPos >= posGoodBye && currentSection !== "goodBye") {
-                animateGoodByeIsOn == false ? animateGoodBye() : null;
-                currentSection = "goodBye";
+              else if (currentPos >= mattsEP.posGoodBye && mattsEP.currentSection !== "goodBye") {
+                mattsEP.animatitonOn['goodBye'] == false ? animateGoodBye() : null;
+                mattsEP.currentSection = "goodBye";
                 if ($(window).width() > 767)
                 {
                   $('.navbar ').animate({'background-color':'rgba(0,0,0,0.0)'});
@@ -328,39 +330,40 @@ function loopAstronaut() {
               }
             }
             //Displays all the content in all sections.
-            function displayAllSections() {
+            mattsEP.displayAllSections = function() {
               $('#ep-intro .text-box').css('display','block');
               $('#ep-intro .text-box .text').css('display','inline');
-              animateIntroIsOn = true;
+              mattsEP.animatitonOn['intro'] = true;
+
               $('#ep-quote-1 .text-box').css('display','block');
               $('#ep-quote-1 .hot-air-balloon').css('display','block');
-              //hotAirBalloonDrift2();
-              animateQuote1IsOn = true;
+                mattsEP.animatitonOn['quote1'] = true;
+
               $("#ep-skills #wrench").css('display','block');
               $("#ep-skills #flashlight").css('display','block');
               $('#ep-skills .title').css('display','block');
               $('#ep-skills .skill-list-row').css('display','block');
               $('#ep-skills .skill-img-row').css('display','block');
-              animateSkillsIsOn = true;
+              mattsEP.animatitonOn['skills'] = true;
               $('.ep-wh-text-boxes').css('display','block');
               $('#ep-wh  .ep-wh-potrait').css('display','block');
-              animateWorkHistoryIsOn = true;
+              mattsEP.animatitonOn['workHistory'] = true;
               $('#ep-methodology h1').css('display','block');
               $('#ep-methodology .column-1').css('display','block');
               $('#ep-methodology .column-2').css('display','block');
               $('#ep-methodology .column-3').css('display','block');
-              animateMethodologyIsOn = true;
+              mattsEP.animatitonOn['method']  = true;
               $('#ep-quote-2 .text').css('display','block');
               $('#ep-quote-2 .cyclops').css('display','block');
-              animateQuote2IsOn = true;
+              mattsEP.animatitonOn['quote2'] = true;
               $('#ep-top-row').css('display','block');
               $('#ep-bottom-row').css('display','block');
-              animateSampleWorkIsOn = true;
+              mattsEP.animatitonOn['sampleWork'] = true;
               $('#ep-phone').css('display','block');
               $('#ep-resume').css('display','block');
               $('#ep-media').css('display','block');
               $('#ep-email').css('display','block');
-              animateContactIsOn = true;
+              mattsEP.animatitonOn['contact']  = true;
               $('#ep-ty #ep-ty-text').css('display','block');
               $('#ep-ty-meteor').css('display','block');
             }
